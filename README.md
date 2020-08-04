@@ -1,2 +1,2 @@
-# Coursera_learning_RST
+# datasciencecoursera
 A learning repo connected to R-Studio
