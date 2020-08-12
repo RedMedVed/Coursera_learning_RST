@@ -8,5 +8,5 @@ complete <- function(directory, id = 1:332) {
     total <- rbind(total, c(i, sum(complete.cases(f))))
   }
   total <- total[-1,]
-  total
+  total <- as.data.frame(total)
 }
