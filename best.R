@@ -20,5 +20,6 @@ best <- function(state, outcome) {
   ## Return hospital name in that state with lowest 30-day death
   ## rate
   data <- data[data$State == state, ]
-  data$hospital.name[data[, outcome] == min(as.numeric(data[, outcome]), na.rm = TRUE)]
+  #data$hospital.name[data[, outcome] == min(as.numeric(data[, outcome]), na.rm = TRUE)]
+  data[which.min(data[, outcome]), 1]
 }
