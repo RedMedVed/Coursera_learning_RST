@@ -6,9 +6,6 @@ best <- function(state, outcome) {
   data <- subset(hosps, select = c(2, 7, 11, 17, 23))
   colnames(data) <- c('hospital.name', 'State', 'heart attack', 'heart failure', 'pneumonia')
   
-  #transform columns to numeric
-  #data <- lapply(data[3:5], as.numeric)
-  
   ## Check that state and outcome are valid
   if(!state %in% unique(data$State)) {
     stop('invalid state')
