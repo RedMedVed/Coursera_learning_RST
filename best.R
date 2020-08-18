@@ -3,7 +3,7 @@ best <- function(state, outcome) {
   hosp_data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
   
   # in this particular case we do not need all the data, so let's take a subset
-  data <- subset(hosps, select = c(2, 7, 11, 17, 23))
+  data <- subset(hosps, State == state, select = c(2, 7, 11, 17, 23))
   colnames(data) <- c('hospital.name', 'State', 'heart attack', 'heart failure', 'pneumonia')
   
   ## Check that state and outcome are valid
@@ -16,6 +16,5 @@ best <- function(state, outcome) {
   
   ## Return hospital name in that state with lowest 30-day death
   ## rate
-  data <- data[data$State == state, ]
   data[which.min(data[, outcome]), 1]
 }
